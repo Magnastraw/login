@@ -8,6 +8,16 @@
     <title>Welcome</title>
 </head>
 <body>
-<p>Welcome, <c:out value='<%=request.getParameter("successName") %>'/></p>
+<%
+    session.setAttribute("name",request.getParameter("name"));
+    session.setAttribute("password",request.getParameter("password"));
+%>
+<%@ include file="loginCheck.jsp"%>
+<p>Welcome, <c:out value='<%=request.getParameter("name") %>'/></p>
+
+<p><a href="page1.jsp">Page 1</a></p>
+
+<p><a href="page2.jsp">Page 2</a></p>
+
 </body>
 </html>

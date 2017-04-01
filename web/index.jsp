@@ -8,28 +8,12 @@
     <title>Login</title>
 </head>
 <body>
-<form action="#">
+<form action="success.jsp">
     <p>Enter Name :
         <input type="text" name="name" /></p>
     <p>Enter Password :
         <input type="password" name="password" /></p>
-    <p><input type="submit" value="submit"/></p>
+    <p><input type="submit"  value="submit"/></p>
 </form>
-<%
-    String name = request.getParameter("name");
-    String password = request.getParameter("password");
-%>
-<c:set var="name" value="<%=name %>"/>
-<c:set var="pass" value="<%=password %>"/>
-<c:if test="${(name == 'denis') && (pass == '12345')}">
-    <jsp:forward page="success.jsp">
-        <jsp:param name="successName" value="<%=name %>"/>
-    </jsp:forward>
-</c:if>
-<c:if test="${(name != null) && (pass != null)}">
-    <jsp:forward page="error.jsp"/>
-</c:if>
-
-
 </body>
 </html>
