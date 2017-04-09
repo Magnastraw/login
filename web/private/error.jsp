@@ -10,6 +10,6 @@
 <body>
 <p>Login failed, please try again.</p>
 
-<p><a href="index.jsp">Back</a></p>
+<p><a href="../index.jsp">Back</a></p>
 </body>
 </html>

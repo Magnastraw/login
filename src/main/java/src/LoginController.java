@@ -16,23 +16,13 @@ public class LoginController extends HttpServlet {
         super();
     }
 
-    protected void doPost(HttpServletRequest request,
-                          HttpServletResponse response) throws ServletException, IOException {
+    public void doGet(HttpServletRequest request,
+                      HttpServletResponse response)
+            throws ServletException, IOException
+    {
+        String pathInfo = request.getPathInfo();
+        request.getRequestDispatcher("/WEB-INF/" + pathInfo).forward(request, response);
 
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        RequestDispatcher rd = null;
-
-        Authenticator authenticator = new Authenticator();
-        String result = authenticator.authenticate(username, password);
-        if (result.equals("success")) {
-            rd = request.getRequestDispatcher("/success.jsp");
-            User user = new User(username, password);
-            request.setAttribute("user", user);
-        } else {
-            rd = request.getRequestDispatcher("/index.jsp");
-        }
-        rd.forward(request, response);
     }
 
 }

@@ -8,9 +8,9 @@
     <title>Login</title>
 </head>
 <body>
-<form action="success.jsp">
+<form action="private/success.jsp">
     <p>Enter Name :
-        <input type="text" name="name" /></p>
+        <input type="text" name="username" /></p>
     <p>Enter Password :
         <input type="password" name="password" /></p>
     <p><input type="submit"  value="submit"/></p>
